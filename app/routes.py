@@ -1,8 +1,13 @@
 from flask import abort, jsonify, request, Blueprint, render_template
 from flasgger import swag_from
+from app import app
 from app.models import UnidadeDeSaude
 
 bp = Blueprint("routes", __name__)
+
+@app.route('/')
+def index():
+    return "Chatbot 123 Ajuda está no ar!"
 
 @bp.route('/')
 def index():

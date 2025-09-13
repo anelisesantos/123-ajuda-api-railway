@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flasgger import Swagger
 from dotenv import load_dotenv
+from app import routes 
 import os
 
 # Inicialize o carregamento de variáveis de ambiente do arquivo .env
