@@ -1,8 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flasgger import Swagger
-from dotenv import load_dotenv
-from app import routes 
+from dotenv import load_dotenvs 
 import os
 
 # Inicialize o carregamento de variáveis de ambiente do arquivo .env
@@ -23,4 +22,5 @@ def register_blueprints():
     from app.routes import bp
     app.register_blueprint(bp, url_prefix='/api')
 
+from app import routes
 register_blueprints()
