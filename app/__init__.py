@@ -26,7 +26,7 @@ from app import routes
 # Importação tardia para evitar importação cíclica
 def register_blueprints():
     from app.routes import bp
-    app.register_blueprint(bp, url_prefix='/api')
+    app.register_blueprint(bp, url_prefix='/')
 
 register_blueprints()
 

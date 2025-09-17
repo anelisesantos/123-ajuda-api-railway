@@ -3,13 +3,16 @@ from flasgger import swag_from
 from app import app
 from app.models import UnidadeDeSaude
 
-bp = Blueprint("routes", __name__)
+bp = Blueprint('main', __name__)
 
 @app.route('/')
 def index():
     return "Chatbot 123 Ajuda está no ar!"
 
 @bp.route('/')
+def home():
+    return 'API finalmente ON'
+
 def index():
     html_content = "<html><head><title>api 123 ajuda</title></head><body><h1>123 ajuda</h1></body></html>"
     return render_template('index.html')
