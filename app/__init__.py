@@ -8,16 +8,19 @@ import os
 load_dotenv()
 
 app = Flask(__name__, template_folder='../templates')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+db = SQLAlchemy(app)
+
 
 from app import routes
 
 swagger = Swagger(app)
 
 # Configuração do banco de dados
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:!Ak34ncs.m@ec2-54-232-63-26.sa-east-1.compute.amazonaws.com/db_123_ajuda'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:!Ak34ncs.m@ec2-54-232-63-26.sa-east-1.compute.amazonaws.com/db_123_ajuda'
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db = SQLAlchemy(app)
+# db = SQLAlchemy(app)
 
 # Importação tardia para evitar importação cíclica
 def register_blueprints():
