@@ -17,6 +17,7 @@ MarkupSafe==2.1.3
 mistune==3.0.1
 mysql-connector-python==8.1.0
 packaging==23.1
+psycopg2-binary
 pkgutil-resolve-name==1.3.10
 protobuf==4.21.12
 python-dotenv>=0.13.0,<1.0.0
