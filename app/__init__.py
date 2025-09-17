@@ -9,6 +9,8 @@ load_dotenv()
 
 app = Flask(__name__, template_folder='../templates')
 
+from app import routes
+
 swagger = Swagger(app)
 
 # Configuração do banco de dados
@@ -22,5 +24,4 @@ def register_blueprints():
     from app.routes import bp
     app.register_blueprint(bp, url_prefix='/api')
 
-from app import routes
 register_blueprints()
